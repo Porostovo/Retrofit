@@ -1,9 +1,11 @@
 package org.example.springadvanced.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.example.springadvanced.models.Movie;
+import org.example.springadvanced.models.MovieDTO;
 import org.example.springadvanced.repositories.MovieRepository;
 import org.example.springadvanced.util.RetrofitUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +95,24 @@ public class MovieServiceImp implements MovieService {
         String jsonString = gson.toJson(response);
         JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
         JsonArray resultsArray = jsonObject.getAsJsonArray("results");
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            MovieDTO movieDTO = mapper.readValue(jsonString, MovieDTO.class);
+            System.out.println(movieDTO.getResults().get(2).getOriginal_title());
+
+//            Movie movie = new Movie();
+//            movie.
+//            movie.setTitle(movieDTO.getTitle());
+//            movie.setOverview(movieDTO.getOverview());
+//            movie.setReleaseDate(movieDTO.getReleaseDate());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
 
         for (int i = 0; i < resultsArray.size(); i++) {
             Movie movie = new Movie();
