@@ -16,11 +16,5 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
-    private String title;
-    private boolean adult;
-    private String overview;
-    private String original_language;
-
-
-
+    private String original_title;
 }

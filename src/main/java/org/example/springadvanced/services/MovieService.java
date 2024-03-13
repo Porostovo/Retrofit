@@ -17,5 +17,5 @@ public interface MovieService {
     void getMovies(Callback<List<Movie>> callback);
 
 
-    void getListOfMoviesAndSave() throws IOException;
+    Object getListOfMoviesAndSave() throws IOException;
 }

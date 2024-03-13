@@ -36,11 +36,11 @@ public class MainController {
 //    }
 
     @GetMapping("/movies2")
-    public String listOfMovies() throws IOException {
-        movieService.getListOfMoviesAndSave();
+    public Object listOfMovies() throws IOException {
 
 
-        return "nic";
+
+        return movieService.getListOfMoviesAndSave();
     }
 
 }
