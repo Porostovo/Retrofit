@@ -20,11 +20,11 @@ public class MainController {
         this.movieService = movieService;
     }
 
-    @GetMapping({"", "/", "index"})
-    public String getMainPage() {
-
-        return "index";
-    }
+//    @GetMapping({"", "/", "index"})
+//    public String getMainPage() {
+//
+//        return "index";
+//    }
     //Once you have been issued a key, an example API key based request looks like this:
     //curl --request GET \
     //--url 'https://api.themoviedb.org/3/movie/11?api_key=3b2838ddd8d1c1aefe081f37bc777170'
